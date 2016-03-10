@@ -1,11 +1,19 @@
 window.addEventListener('load', function() {
 	//stran nalozena
 		
+	// Izvedi prijavo
+	var izvediPrijavo = function() {
+		var uporabnik = document.querySelector("#uporabnisko_ime").value;
+		document.querySelector("#uporabnik").innerHTML = uporabnik;
+		document.querySelector(".pokrivalo").style.visibility = "hidden";
+	}
+	document.querySelector("#prijavniGumb").addEventListener("click", izvediPrijavo);
+	document.querySelector("#prijavniGumb").addEventListener("enter", izvediPrijavo);	
 	//Posodobi opomnike
 	var posodobiOpomnike = function() {
 		var opomniki = document.querySelectorAll(".opomnik");
 		
-		for (i = 0; i < opomniki.length; i++) {
+		for (var i = 0; i < opomniki.length; i++) {
 			var opomnik = opomniki[i];
 			var casovnik = opomnik.querySelector("span");
 			var cas = parseInt(casovnik.innerHTML);
